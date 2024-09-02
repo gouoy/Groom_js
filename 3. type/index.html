@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> 
+        [type] 
+    
+        1) 원시타입
+         //String 문자열 : 
+          // 저장이 되면 콜스택 메모리에 들어가요 
+        2) 참조타입 
+        // 여기에 대한 값이 힙이라는 곳에 저장됨 
+    </div>
+    
+    <script>
+        const naam = "Han";  // String 
+        const oud  = 30 ; // Number 
+        const hasJob = false ; // Boolean (T/F) 
+        const car = null; // Null(의도적으로 값이 없다) (개발자가 넣어주는 거)
+        let anything ; // undefined 값을 가지게 됨  (안에서 직접 넣어주는 거 )
+        const sym = Symbol(); 
+
+      //  null 의 typeof를 물어보면 object -> 이건 설계오류임 근데. 레거시대응을 위해 남아있느..
+
+        // 참조 타입 
+        /// Array 배열 
+        const hobbies = ['walking', 'jogging']
+
+
+        // js 는 동적(dynamic) 타입! 느슨한 타입! (<-> 정적(Static) 타입 : 자바, 타입스크립트)
+        // 동적타입: 런타임 시점에 타입이 결정되는 언어. 
+
+        let foo = 42 // foo = number
+        foo = 'bar' // foo -> sting
+        foo = true // foo -> boolean 
+        //변수는 여러개의 타입을 가질 수 있는데...  (동적타입 : 같은 변수가 여러개의 타입 가질 수 있고, 타ㅣㅇㅂ을 우리가 집접 명시하지 않아도 됨 )
+        // <-> Static 
+    </script>
+</body>
+</html>

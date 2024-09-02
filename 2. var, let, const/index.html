@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // 
+    var : 중복 선언 가능, 재할당 가능
+    let: 중복 선언 불가, 재할당 가능
+    const: 중복 선언 불가, 재할당 불가 
+
+    <script>
+
+        //var 
+        var greeting = 'hallo';
+        console.log(greeting); //hello 
+
+        var greeting = 'hoi'
+        console.log(greeting); //hi 
+
+        greeting = 'hoe gaat het';
+        console.log(greeting); //hoe gaat het
+        //중복 선언 O , 재할당 O 
+        // ----------------------------------------
+        
+        let greeting = "hallo iedereen"; 
+        console.log(greeting) //hallo iedereen
+        
+        // let greeting = "hoi hoi";
+        // console.log(greeting);  //greeting' has already been declared. (!WARN!)
+        
+        greeting = "hahaha"
+        
+        //중복선언 X, 재할당 O 
+        // ----------------------------------------
+        
+        const greeting = "hoi!";
+        console.log(greeting);
+
+
+        // 배열, 객체의 값 변경 가능  (재할당이 아니기 때문에 변경 가능! 허나 다시 대입 불가)
+        // [], {}  
+
+        // 참조 범위 (scope)
+        // var => 함수 레벨 스코프
+        // let, const => 블록 레벨 스코프    : 블록이란 {} 감싸져있는 범위 
+
+        function func(){
+            if(true){
+                var a = 'a';
+                console.log(a); // a 
+                // ▵ 함수 안에 있음 
+            }
+            console.log(a);  // ㅁ 
+            // ▵ 함수 안에 있음
+        }
+        func();
+        console.log(a); // a is not defined 
+        // ▵ 함수 바깥에 있음 (func 안에 있는 a 를 참조할 수 없다. 함수레벨에 스코프가 있어서 함수 내부에만 범위를 가지기 때문 )
+
+        function func2(){
+            if(true){
+                let a = 'a';
+                console.log(a); // a 
+                // ▵ 함수 안에 있음 
+            }
+            console.log(a);  // error
+            // ▵ 함수 안에 있음
+        }
+        func2(); 
+        console.log(a) //error 
+
+        // Hoisting 호이스팅 
+        // 무언가를 들어올린다는 뜻. 
+
+        //변수 선언 단계
+        // 1. 선언 단계   (코드 실행되기 전에 현재 범위 맨 위로 호이스팅)
+        //  2. 할당 단계  
+
+        func();
+
+        function func(){  //함수 자체도 호이스팅된다. 
+            console.log("hoisting test")
+        }
+
+        // function, var 호이스팅 가능합니다. 
+
+        // const / let => Hoisting 
+        // 되긴 되는데 당연한 차이점이있음 
+
+        console.log(greeting);  
+        const greeting = "hello";  //참조에러. Temporal dead zone 으로 보호되어 있음
+        // 선언 ~~ ~~~ 할당단계 사이를 TDZ(Temporal Dead Zone) 라고 부름 
+        // 콘솔로 출력하려 하며는 에러가 나는 구간.
+        // var, let , const 는 호이스팅 안에서의 차이는 undefined 가 TDZ에서 할당이 되느냐 안되느냐 
+
+
+        // var, let ,const 어떤 걸 사용해야할까?
+        // var 사용 안하면 그만~
+        // const 를 우선순위로 사용하기
+        // let  => 재할당필요한 것 . 
+        // 고로! const 사용하되 수정요소가 있을 때 let으로 변경하면 좋다. 
+        // var는 잘못하면 최상위 객체인 window 값은 전역 공간을 오염시킬 수 있어 사용하지 않는 것이좋습니다. 
+
+    </script>
+
+</body>
+</html>
