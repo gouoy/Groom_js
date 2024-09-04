@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+window는 브라우저에서 제공
+nodejs에서 제공하는 global을 이용하게 되는데... 
+(먼소리야)
+
+<script>
+    // alert('hello');;
+    // const input = prompt();
+    // alert (input);
+
+    if(confirm('yes or no')){
+        console.log("yes");
+    }else{
+        console.log("No");
+    }
+
+    let val; 
+
+    val = window.outerHeight; 
+    val = window.outerWidth; 
+
+    val = window.innerHeight;
+    val = window.innerWidth;
+
+    val = window.scrollY; 
+    // window는 창에 대한정보를 가지고 있으며, 창을 컨트롤 할 수 있따. 
+
+    val = window.location; //(윈도우 객체 안에 로케이션이라는 객체)
+    // url에 대한 정보를 가지고 있는 location
+    // 
+    window.location.reload(); // current page is reloaded 
+
+    val = window.history ; // history 는 사용자가 방문한 것에 대한 정보가 들어있게 됨 
+    // like, 몇번 방문햇는지, 
+    val = window.navigator;
+
+    console.log(val); //Browser에 대한 정보 포함 
+
+    // BOM => Browser Object Model ; 
+    window.location
+    window.navigator
+    window.history
+    window.screen
+    // ... 
+
+
+
+    // DOM => Document Object Model ; 
+    // window.document = 
+
+    // var 변수  ===> window 객체 안에 ㅡㄹ어가게 됨 
+
+    var greeting = 'hello';
+
+    function doGreeting(){
+        return greeting; 
+    }
+    
+    let greeting1 = 'hello1' 
+    // let , const 는 블록 스코프라 (전역객체의 프로퍼티로 사용될 수 없음 ) 
+    // var는 전역객체의 프로퍼티로 사용할 수 있음 
+
+    val = document.scripts;
+    val = document.links;
+    val = document.forms;
+    val = document.images; 
+
+    // 하나의 요소에 접근하기 
+    // document.querySelector(선택자) ==> 선택자에 맞는 첫번째 태그 반환 
+    // document.getElementById(요소 id)  ==> id 가진 태그 반환 
+    
+
+    // style 변경 
+
+    선택자.style.fontSize = "24px"
+
+    // content 변경
+    // [선택].textContent = "textContent"; 
+    // [선택].innerText = "inner Text";
+    // [선택].innerHTML = "<span>innner HTML</span>"
+
+    // innerText랑 innertextContent 차이점?'
+    //  innerTaxt 사람들에게 보여쟂ㅣ지 않음 
+    // //  innerconcer dom :  
+
+
+    // 여러개를 return ! 
+    document.getElementsByClassName 
+    document.querySelectorAll 
+
+    
+    </script>
+</body>
+</html>
