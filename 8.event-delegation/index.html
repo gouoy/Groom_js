@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="buttons">
+        <button class="buttonClass">
+            Click me
+        </button>
+        <button class="buttonClass">
+            Click me
+        </button>
+    </div>
+    <script>
+       /*
+       const buttons = document.getElementsByClassName('buttonClass')
+
+        for(const button of buttons){
+            button.addEventListener('click', ()=>alert('clicked')); 
+        }
+
+        let buttonList = document.querySelector('#buttons');
+        let button = document.createElement('button'); 
+        button.setAttribute('class','buttonClass');
+        button.innerText = 'Click me';
+        buttonList.appendChild(button); 
+        */ 
+
+        const buttons = document.getElementsByClassName('buttonClass')
+        buttons.addEventListener('click', ()=>alert('clicked'));  // d이벤트 버블링 현상? 
+
+        let buttonList = document.querySelector('#buttons');
+        let button = document.createElement('button'); 
+
+        button.setAttribute('class','buttonClass');
+        button.innerText = 'Click me';
+        buttonList.appendChild(button); 
+
+        // 어려워어어ㅓ억 
+        
+    </script>
+</body>
+</html>

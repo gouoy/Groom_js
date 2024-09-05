@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form> form
+        <div >div 
+            <p>p </p>
+        </div>
+
+    </form>
+
+
+    <script>
+        for(let element of document.querySelectorAll('*')){
+            element.addEventListener('click',event => alert(`캡쳐링: ${element.tagName}`),true);
+            element.addEventListener('click',event => alert(`버블링: ${element.tagName}`)); // true 쓸 필요 없다. 
+            
+        }
+    </script>
+</body>
+</html>

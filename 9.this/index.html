@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    어디에 있는지에 따라 this가 참조하는 게 다름
+    -->
+    
+
+
+    <script>
+        // this 참조 
+
+        // Method this --> 해당 객체 참조 
+        const audio = {
+            title: 'a',
+            play(){
+                console.log('play this', this)
+            } // <= 메소드 
+            }
+        // function this => window 객체
+        function playAudio(){
+            console.log(this); 
+        }
+        playAudio(); // <- window 객체 
+
+        // Constructor (생성자) 함수 this => 빈 객체 
+        function Audio(title){
+            this.title = title; 
+        }
+        const audioA = new Audio('a'); 
+        const audioB = new Audio('b') 
+    </script>
+</body>
+</html>

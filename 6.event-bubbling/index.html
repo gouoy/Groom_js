@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body *{
+            border: 1px solid red;
+            padding:10px;
+            margin:10px; 
+        }
+    </style>
+</head>
+<body>
+    <form onclick="alert('form')"> form
+        <div onclick="alert('div')">div 
+            <!-- <p onclick="event.stopPropagation()">p </p> -->
+            <p onclick="alert('p')">p </p>
+        </div>
+
+    </form> 
+
+    <script>
+        const form = document.querySelector('form')
+        const div = document.querySelector('div')
+        const p = document.querySelector('p')
+
+        form.onclick = function(event){ //오 form 온클릭인데 div, p까지 접근이 되네 ??
+            event.target.style.backgroundColor = 'yellow' //form만 누르면 색이 안바뀜 머지? 
+
+            setTimeout(() => {
+                alert('target ='+event.target.tagName + ', this =' + this.tagName )
+                event.target.style.backgroundColor ='';
+            }, 1000)
+        } // event.target -> p / event.this -> form 
+
+        // event.target  => 실제 이벤트가 시작된 타깃 
+        // event.currentTarget  => 현재 실행중인 핸드러가 할당된 요소 
+    </script>
+</body>
+</html>
