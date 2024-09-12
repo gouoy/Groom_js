@@ -34,6 +34,29 @@
         }
         const audioA = new Audio('a'); 
         const audioB = new Audio('b') 
+
+        const audioC = {
+            title: `audio`,
+            categories: ['rock','pop','hiphop'],
+            displayCategories(){
+                this.categories.forEach(function(category){
+                    console.log(`title: ${this.title},
+                    category: ${category}`);
+            }, {title: 'audio'}))
+                }
+            } // 함수에서 쓰였기 때문에 함수는 window 만 쓰고 있음, window에 타이틀만 쓰구 있다.
+
+
+            // 화살표 안 this는 항상 상위 스코프의 this를 참조하고 이를 lexical this를 함
+            const arrowAudio = {
+                title: 'audio',
+                categories: ['rock','pop','hiphop'],
+                displayCategories(){
+                    this.categories.forEach((category)=>{
+                        console.log(this)
+                    })
+                }
+            }
     </script>
 </body>
 </html>
