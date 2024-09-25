@@ -26,7 +26,7 @@ console.log('bArray === cArray', bArray === cArray); // false
 
 // depth 1 
 cArray.push([5,6,7]); 
-console.log('cArray',cArray) l // 1,2,3,4, Array(3)
+console.log('cArray',cArray) ;// 1,2,3,4, Array(3)
 
 const dArray = [...cArray, 10]; 
 console.log('dArray', dArray );
@@ -57,6 +57,6 @@ const newAObject = JSON.parse(Object.stringify(aObject));
 console.log('aObject', aObject)
 console.log('newAObject', newAObject)
 aObject.cObject.a = 3; 
-const nieuweAObject = {...aObject, cObject: {...aObject.}} // 깊은 복사 질문 
+const nieuweAObject = {...aObject, cObject: {...aObject.}};// 깊은 복사 질문 
 
 // structuredClone(mushrooms1) <- 이 부분질문 
